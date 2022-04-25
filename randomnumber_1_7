@@ -1,0 +1,6 @@
+% Función que crea números enteros aleatorios del 1 al 7, utilizando una función dada
+% que crea números enteros aleatorios del 1 al 5
+% randomnumber_1_5= int8(rand()*4 +1) supuesta función dada 
+
+randomnumber_1_5= int8(rand()*4 + 1)
+randomnumber_1_7= int8(rand()*2 + randomnumber_1_5)
