@@ -1,0 +1,38 @@
+
+import java.util.Random;
+
+public class main {
+	
+    // función que crea valores aleatorios enteros entre 1 y 5 
+	public static int randomnumber5()
+	{
+		Random number = new Random();
+		int number5 = (int)(number.nextDouble() * 5 + 1);
+		return number5;
+	  
+	}
+	 
+	// función que crea valores del 1 al 7, quitando los valores mayores a 7
+	// ya que no nos interesan
+	public static int randomnumber7() 
+	{
+	    int number7;
+	    do {
+	    number7 = 5*(randomnumber5() -1 )+ randomnumber5();
+	    } while (number7 > 7);
+	    return number7;
+	}
+	 
+	// Creamos 20000 números para comprobar que están distribuidos uniformemente
+	public static void main (String[] args) {
+		int [] contador = new int[8];
+	    for (int i = 1; i <= 20000; i++)
+	    {
+            int valor_numero = randomnumber7();
+            contador[valor_numero]++;
+        }
+        for (int i = 1; i <= 7; i++) {
+            System.out.println(i + " = " + contador[i]+ " veces " + "=" + (contador[i] / 200.0) + "%");
+        }
+	}
+	}
